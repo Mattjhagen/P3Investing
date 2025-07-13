@@ -1,1 +1,132 @@
-/* --- General Body & Background Styles --- */ body { margin: 0; font-family: 'Inter', sans-serif; background-color: #000; color: #fff; display: flex; flex-direction: column; min-height: 100vh; /* Ensure body takes at least full viewport height */ } .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #000 url('data:image/svg+xml,'); animation: stars 200s linear infinite; z-index: -1; } @keyframes stars { from { background-position: 0 0; } to { background-position: -10000px 5000px; } } /* --- Main Content Wrapper --- */ main { flex-grow: 1; /* This is the key: it makes the main content take up available space */ padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; /* This centers content on short pages like the homepage */ box-sizing: border-box; } .container { max-width: 800px; width: 100%; text-align: center; } .logo { width: 100px; height: 100px; margin-bottom: 1rem; } h1 { font-size: 4rem; font-weight: 800; margin-bottom: 1rem; } p { font-size: 1.25rem; line-height: 1.6; margin-bottom: 2rem; } /* --- Buttons --- */ .buttons { display: flex; gap: 1rem; justify-content: center; } .btn { padding: 1rem 2rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: all 0.3s ease; } .btn-primary { background-color: #FF5B7A; color: #fff; } .btn-primary:hover { background-color: #e04a66; } .btn-secondary { border: 2px solid #5DE794; color: #5DE794; } .btn-secondary:hover { background-color: #5DE794; color: #000; } /* --- Footer --- */ footer { padding: 2rem; text-align: center; width: 100%; box-sizing: border-box; } .social { display: flex; gap: 1.5rem; justify-content: center; } .social img { width: 24px; height: 24px; opacity: 0.7; transition: opacity 0.3s ease; filter: invert(1); } .social img:hover { opacity: 1; } .links { margin-top: 1rem; } .links a { color: #aaa; text-decoration: none; margin: 0 0.5rem; transition: color 0.3s ease; } .links a:hover { color: #fff; } .copyright { margin-top: 1rem; font-size: 0.875rem; color: #aaa; } /* --- Article Page Specific Styles --- */ .container.article { text-align: left; margin: 3rem 0; padding: 2rem; background: rgba(255, 255, 255, 0.05); border-radius: 1rem; backdrop-filter: blur(5px); } .container.article h1 { text-align: center; margin-bottom: 2rem; } .container.article h2 { font-size: 2rem; font-weight: 600; color: #FF5B7A; margin-top: 2rem; margin-bottom: 1rem; } .container.article ul { list-style-position: inside; padding-left: 1rem; margin-bottom: 1rem; } .container.article li { margin-bottom: 0.5rem; }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>P₃ Lending</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:700,800&display=swap" rel="stylesheet">
+  <style>
+    /* --- General Body & Background Styles --- */
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      z-index: -1;
+    }
+    main {
+      flex-grow: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    /* --- Logo Styles --- */
+    .p3-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+    .p3-logo-symbol {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+    .p3-bracket-left {
+      color: #FF5B7A;
+      font-size: 5rem;
+      font-weight: 700;
+      margin-right: 0.2em;
+    }
+    .p3-main {
+      color: #2DE0E6;
+      font-size: 4rem;
+      font-weight: 800;
+      position: relative;
+      margin: 0 0.2em;
+    }
+    .p3-sub {
+      color: #FF9900;
+      font-size: 2rem;
+      font-weight: 700;
+      position: absolute;
+      right: -1.3em;
+      bottom: 0.2em;
+      font-family: 'Inter', sans-serif;
+    }
+    .p3-bracket-right {
+      color: #2DE0E6;
+      font-size: 5rem;
+      font-weight: 700;
+      margin-left: 0.2em;
+    }
+    .p3-lending {
+      color: #FF9900;
+      font-size: 2.7rem;
+      font-weight: 800;
+      margin-top: 0.7em;
+      letter-spacing: 0.04em;
+      font-family: 'Inter', monospace, sans-serif;
+    }
+    @media (max-width: 600px) {
+      .p3-logo-symbol {
+        font-size: 2.5rem;
+      }
+      .p3-bracket-left,
+      .p3-bracket-right {
+        font-size: 2.5rem;
+      }
+      .p3-main {
+        font-size: 2rem;
+      }
+      .p3-sub {
+        font-size: 1rem;
+        right: -0.7em;
+        bottom: 0.1em;
+      }
+      .p3-lending {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <main>
+    <div class="container">
+      <div class="p3-logo">
+        <div class="p3-logo-symbol">
+          <span class="p3-bracket-left">(</span>
+          <span class="p3-main">
+            P
+            <span class="p3-sub">3</span>
+          </span>
+          <span class="p3-bracket-right">)</span>
+        </div>
+        <div class="p3-lending">Lending</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
